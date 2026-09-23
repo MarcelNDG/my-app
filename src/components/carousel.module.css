@@ -1,0 +1,62 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.modalBackdrop {
+  padding: 10%;
+}
+
+.modalPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 6% 8% 0;
+}
+
+.modalImage {
+  flex: 0 1 auto;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.modalText {
+  flex: 0 0 auto;
+  padding-top: 6%;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .modalBackdrop {
+    padding: 8%;
+  }
+
+  .modalPanel {
+    flex-direction: row;
+    gap: 10%;
+    padding-top: 0;
+  }
+
+  .modalImage {
+    flex: 0 0 40%;
+    justify-content: center;
+  }
+
+  .modalText {
+    flex: 1 1 auto;
+    padding-top: 0;
+  }
+}
