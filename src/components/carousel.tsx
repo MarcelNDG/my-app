@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./carousel.module.css";
+import "./carousel.css";
 
 const slides = [
   {
@@ -100,6 +101,7 @@ export default function Carousel() {
                 setSelected(i);
               }}
               aria-label={`More info about ${slide.title}`}
+              className={focused ? `${styles.slide} ${styles.slideFocused}` : styles.slide}
               style={{
                 cursor: "pointer",
                 padding: 0,
@@ -107,10 +109,6 @@ export default function Carousel() {
                 background: "none",
                 borderRadius: "0.75rem",
                 overflow: "hidden",
-                opacity: focused ? 1 : 0.85,
-                transform: focused ? "scale(1)" : "scale(0.85)",
-                transformOrigin: "center",
-                transition: "transform 300ms ease, opacity 300ms ease",
               }}
             >
               <Image
@@ -224,6 +222,39 @@ export default function Carousel() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam.
               </p>
+              <button
+                type="button"
+                onClick={() => setSelected(null)}
+                aria-label="Close"
+                className={styles.modalClose}
+                style={{
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  alignSelf: "center",
+                  backgroundColor: "#f87171",
+                  color: "#ffffff",
+                  border: "2px solid #f87171",
+                  borderRadius: "0.75rem",
+                  width: "100%",
+                  boxSizing: "border-box",
+                  height: "3.5rem",
+                }}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22.3"
+                  height="22.3"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  aria-hidden="true"
+                >
+                  <path d="M6 6l12 12M18 6L6 18" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>

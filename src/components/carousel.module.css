@@ -1,7 +1,31 @@
+.slide {
+  transform: scale(0.85);
+  transform-origin: center;
+  opacity: 0.85;
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+.slideFocused {
+  transform: scale(1);
+  opacity: 1;
+}
+
+@media (max-width: 639px) {
+  .slideFocused {
+    transform: scale(0.955);
+  }
+}
+
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+
+@media (max-width: 639px) {
+  .grid {
+    gap: 0;
+  }
 }
 
 @media (min-width: 640px) {
@@ -20,11 +44,17 @@
   padding: 10%;
 }
 
+@media (max-width: 639px) {
+  .modalBackdrop {
+    padding: 5%;
+  }
+}
+
 .modalPanel {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 6% 8% 0;
+  padding: 6% 8% 6%;
 }
 
 .modalImage {
@@ -34,13 +64,17 @@
 }
 
 .modalText {
-  flex: 0 0 auto;
+  flex: 1 1 auto;
   padding-top: 6%;
   justify-content: center;
 }
 
+.modalClose {
+  margin-top: auto;
+}
+
 @media (min-width: 1024px) {
-  .modalBackdrop {
+.modalBackdrop {
     padding: 8%;
   }
 
@@ -48,6 +82,7 @@
     flex-direction: row;
     gap: 10%;
     padding-top: 0;
+    padding-bottom: 0;
   }
 
   .modalImage {
@@ -58,5 +93,9 @@
   .modalText {
     flex: 1 1 auto;
     padding-top: 0;
+  }
+
+  .modalClose {
+    margin-top: 0;
   }
 }
