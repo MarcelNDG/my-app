@@ -58,19 +58,52 @@
 }
 
 .modalImage {
-  flex: 0 1 auto;
-  justify-content: flex-start;
+  flex: 0 0 auto;
+  max-height: 33%;
+  justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 640px) {
+  .modalImage {
+    justify-content: center;
+  }
 }
 
 .modalText {
   flex: 1 1 auto;
-  padding-top: 6%;
+  padding-top: 2%;
   justify-content: center;
 }
 
+.modalText h2,
+.modalText p {
+  text-align: left !important;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: none;
+}
+
+@media (max-width: 639px) {
+  .video {
+    margin-top: -0.5rem;
+  }
+}
+
+.video iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-width: min(100%, calc(22vh * 16 / 9));
+}
+
 .modalClose {
-  margin-top: auto;
+  margin-top: 0;
 }
 
 @media (min-width: 1024px) {
@@ -88,11 +121,31 @@
   .modalImage {
     flex: 0 0 40%;
     justify-content: center;
+    max-height: none;
   }
 
   .modalText {
     flex: 1 1 auto;
     padding-top: 0;
+  }
+
+  .video {
+    max-height: none;
+  }
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .video {
+    margin-top: 0;
+    max-height: none;
+  }
+
+  .modalClose {
+    margin-top: 0;
+  }
+}
+
+.video iframe {
+    max-width: 100%;
   }
 
   .modalClose {

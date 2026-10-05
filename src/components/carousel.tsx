@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import AudioPlayer from "./audio-player";
 import styles from "./carousel.module.css";
 import "./carousel.css";
 
@@ -216,12 +217,26 @@ export default function Carousel() {
                 overflow: "hidden",
               }}
             >
-              <h2 style={{ margin: 0, fontSize: "1.5rem", fontWeight: "bold" }}>{slides[selected].title}</h2>
-              <p style={{ margin: 0, fontSize: "1rem" }}>
+              <h2 style={{ margin: 0, fontSize: "clamp(1.5rem, 5vw, 2.25rem)", fontWeight: 700 }}>{slides[selected].title}</h2>
+              <p style={{ margin: 0, fontSize: "clamp(0.875rem, 2.5vw, 1rem)" }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam.
               </p>
+              <AudioPlayer src="/sound/pudu.mp3" label={slides[selected].title} />
+              <div
+                className={styles.video}
+                style={{ flex: "1 1 auto", minHeight: "3rem", width: "100%" }}
+              >
+                <iframe
+                  src="https://www.youtube.com/embed/2KlEkQ30beo"
+                  title={`Video of ${slides[selected].title}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                  style={{ border: "none", borderRadius: "0.5rem", display: "block" }}
+                />
+              </div>
               <button
                 type="button"
                 onClick={() => setSelected(null)}
