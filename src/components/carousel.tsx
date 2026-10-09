@@ -225,6 +225,7 @@ export default function Carousel() {
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
             </button>
+            <div className={styles.modalSpacer} aria-hidden="true" />
             <div
               className={styles.modalImage}
               style={{
@@ -261,6 +262,7 @@ export default function Carousel() {
                 enim ad minim veniam.
               </p>
               <AudioPlayer src="/sound/pudu.mp3" label={slides[selected].title} />
+              <div className={styles.modalTextSpacer} aria-hidden="true" />
               <div
                 className={styles.video}
                 style={{ width: "100%" }}

@@ -85,7 +85,7 @@
 }
 
 .modalText {
-  flex: 1 1 auto;
+  flex: 3 1 auto;
   padding-top: 2%;
   justify-content: center;
   gap: 0.30rem;
@@ -105,7 +105,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1 1 auto;
+  flex: 2 1 auto;
   min-height: 3rem;
   width: 100%;
   max-height: none;
@@ -120,6 +120,14 @@
 
 .modalClose {
   margin-top: 0;
+}
+
+.modalSpacer {
+  flex: 1 1 auto;
+}
+
+.modalTextSpacer {
+  flex: 0.5 1 auto;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -155,6 +163,11 @@
 
   .modalText > div:not([class]) {
     margin-top: 0.2rem;
+  }
+
+  .modalSpacer,
+  .modalTextSpacer {
+    display: none;
   }
 
   .video {
