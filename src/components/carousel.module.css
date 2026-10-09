@@ -11,7 +11,14 @@
 }
 
 @media (max-width: 639px) {
-  .slide {
+/*
+ * Breakpoints (named for easier prompting):
+ *   mobile : <640px   (base styles)
+ *   tablet : 640px-1023px  (768px sub-breakpoint: modal width cap)
+ *   desktop: 1024px+
+ */
+
+.slide {
     transform: scale(0.9);
   }
 

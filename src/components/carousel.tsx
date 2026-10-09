@@ -8,63 +8,63 @@ import "./carousel.css";
 
 const slides = [
   {
-    src: "/mock-1.svg",
+    src: "/images/mock-1.svg",
     alt: "Mock image 1",
     title: "Slide 1",
     description:
       "A blue placeholder image used for the first carousel slide. It represents topic one of this mock gallery.",
   },
   {
-    src: "/mock-2.svg",
+    src: "/images/mock-2.svg",
     alt: "Mock image 2",
     title: "Slide 2",
     description:
       "A teal placeholder image used for the second carousel slide. It represents topic two of this mock gallery.",
   },
   {
-    src: "/mock-3.svg",
+    src: "/images/mock-3.svg",
     alt: "Mock image 3",
     title: "Slide 3",
     description:
       "An orange placeholder image used for the third carousel slide. It represents topic three of this mock gallery.",
   },
   {
-    src: "/mock-4.svg",
+    src: "/images/mock-4.svg",
     alt: "Mock image 4",
     title: "Slide 4",
     description:
       "A violet placeholder image used for the fourth carousel slide. It represents topic four of this mock gallery.",
   },
   {
-    src: "/mock-5.svg",
+    src: "/images/mock-5.svg",
     alt: "Mock image 5",
     title: "Slide 5",
     description:
       "A pink placeholder image used for the fifth carousel slide. It represents topic five of this mock gallery.",
   },
   {
-    src: "/mock-6.svg",
+    src: "/images/mock-6.svg",
     alt: "Mock image 6",
     title: "Slide 6",
     description:
       "A yellow placeholder image used for the sixth carousel slide. It represents topic six of this mock gallery.",
   },
   {
-    src: "/mock-7.svg",
+    src: "/images/mock-7.svg",
     alt: "Mock image 7",
     title: "Slide 7",
     description:
       "A sky blue placeholder image used for the seventh carousel slide. It represents topic seven of this mock gallery.",
   },
   {
-    src: "/mock-8.svg",
+    src: "/images/mock-8.svg",
     alt: "Mock image 8",
     title: "Slide 8",
     description:
       "A green placeholder image used for the eighth carousel slide. It represents topic eight of this mock gallery.",
   },
   {
-    src: "/mock-9.svg",
+    src: "/images/mock-9.svg",
     alt: "Mock image 9",
     title: "Slide 9",
     description:
@@ -198,11 +198,11 @@ export default function Carousel() {
               }}
             >
               <Image
-                src={slides[selected].src}
+                src="/images/pudu.png"
                 alt={slides[selected].alt}
                 width={800}
                 height={800}
-                style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", margin: 0, objectFit: "contain", borderRadius: "0.5rem", boxShadow: "0 0 0 1px rgba(128,128,128,0.2)" }}
+                style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", margin: 0, objectFit: "contain", borderRadius: "0.5rem" }}
               />
             </div>
             <div
