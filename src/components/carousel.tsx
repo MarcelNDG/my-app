@@ -262,7 +262,6 @@ export default function Carousel() {
                 enim ad minim veniam.
               </p>
               <AudioPlayer src="/sound/pudu.mp3" label={slides[selected].title} />
-              <div className={styles.modalTextSpacer} aria-hidden="true" />
               <div
                 className={styles.video}
                 style={{ width: "100%" }}
