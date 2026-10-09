@@ -72,7 +72,7 @@ export default function AudioPlayer({ src, label }: Props) {
         padding: "0.5rem",
         border: "none",
         borderRadius: "8px",
-        backgroundColor: "#22c55e",
+        backgroundColor: "#4f46e5",
       }}
     >
       <audio ref={audioRef} src={src} preload="none" />
@@ -90,7 +90,7 @@ export default function AudioPlayer({ src, label }: Props) {
           width: "3rem",
           height: "3rem",
           backgroundColor: "#ffffff",
-          color: "#22c55e",
+          color: "#4f46e5",
           border: "none",
           borderRadius: "0.50rem",
         }}

@@ -213,7 +213,7 @@ export default function Carousel() {
                 boxSizing: "border-box",
                 display: "flex",
                 flexDirection: "column",
-                gap: "0.75rem",
+                gap: "0.30rem",
                 overflow: "hidden",
               }}
             >
@@ -248,9 +248,9 @@ export default function Carousel() {
                   alignItems: "center",
                   justifyContent: "center",
                   alignSelf: "center",
-                  backgroundColor: "#f87171",
-                  color: "#ffffff",
-                  border: "2px solid #f87171",
+                  backgroundColor: "#ffffff",
+                  color: "#dc2626",
+                  border: "2px solid #dc2626",
                   borderRadius: "0.75rem",
                   width: "100%",
                   boxSizing: "border-box",
