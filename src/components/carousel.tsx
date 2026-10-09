@@ -188,6 +188,43 @@ export default function Carousel() {
               boxSizing: "border-box",
             }}
           >
+            <button
+              type="button"
+              onClick={() => setSelected(null)}
+              aria-label="Close"
+              className={styles.modalClose}
+              style={{
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: 0,
+                position: "absolute",
+                top: "0.5rem",
+                right: "0.5rem",
+                zIndex: 10,
+                width: "2.5rem",
+                height: "2.5rem",
+                boxSizing: "border-box",
+                backgroundColor: "#ffffff",
+                color: "#000000",
+                border: "2px solid #000000",
+                borderRadius: "50%",
+              }}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="22.3"
+                height="22.3"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                aria-hidden="true"
+              >
+                <path d="M6 6l12 12M18 6L6 18" />
+              </svg>
+            </button>
             <div
               className={styles.modalImage}
               style={{
@@ -237,39 +274,6 @@ export default function Carousel() {
                   style={{ border: "none", borderRadius: "0.5rem", display: "block" }}
                 />
               </div>
-              <button
-                type="button"
-                onClick={() => setSelected(null)}
-                aria-label="Close"
-                className={styles.modalClose}
-                style={{
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  alignSelf: "center",
-                  backgroundColor: "#ffffff",
-                  color: "#dc2626",
-                  border: "2px solid #dc2626",
-                  borderRadius: "0.75rem",
-                  width: "100%",
-                  boxSizing: "border-box",
-                  height: "3.5rem",
-                }}
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="22.3"
-                  height="22.3"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  aria-hidden="true"
-                >
-                  <path d="M6 6l12 12M18 6L6 18" />
-                </svg>
-              </button>
             </div>
           </div>
         </div>
