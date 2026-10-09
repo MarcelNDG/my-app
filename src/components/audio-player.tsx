@@ -70,9 +70,9 @@ export default function AudioPlayer({ src, label }: Props) {
         width: "100%",
         boxSizing: "border-box",
         padding: "0.5rem",
-        border: "none",
+        border: "2px solid #3e2723",
         borderRadius: "8px",
-        backgroundColor: "#4f46e5",
+        backgroundColor: "#ffffff",
       }}
     >
       <audio ref={audioRef} src={src} preload="none" />
@@ -90,9 +90,9 @@ export default function AudioPlayer({ src, label }: Props) {
           width: "3rem",
           height: "3rem",
           backgroundColor: "#ffffff",
-          color: "#4f46e5",
-          border: "none",
-          borderRadius: "0.50rem",
+          color: "#3e2723",
+          border: "2px solid #3e2723",
+          borderRadius: "50%",
         }}
       >
         {playing ? (
@@ -141,7 +141,7 @@ export default function AudioPlayer({ src, label }: Props) {
           fontSize: "0.875rem",
           fontVariantNumeric: "tabular-nums",
           fontWeight: 700,
-          color: "#ffffff",
+          color: "#3e2723",
         }}
       >
         {formatTime(current)} / {formatTime(duration)}

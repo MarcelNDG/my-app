@@ -117,6 +117,7 @@ export default function Carousel() {
                 alt={slide.alt}
                 width={800}
                 height={800}
+                loading="eager"
                 style={{ width: "100%", height: "auto", display: "block", borderRadius: "0.75rem" }}
               />
             </button>
@@ -197,8 +198,8 @@ export default function Carousel() {
                 overflow: "hidden",
               }}
             >
-              <Image
-                src="/images/pudu.png"
+              <img
+                src="/images/pudushadow.png"
                 alt={slides[selected].alt}
                 width={800}
                 height={800}
@@ -213,7 +214,6 @@ export default function Carousel() {
                 boxSizing: "border-box",
                 display: "flex",
                 flexDirection: "column",
-                gap: "0.30rem",
                 overflow: "hidden",
               }}
             >
@@ -226,7 +226,7 @@ export default function Carousel() {
               <AudioPlayer src="/sound/pudu.mp3" label={slides[selected].title} />
               <div
                 className={styles.video}
-                style={{ flex: "1 1 auto", minHeight: "3rem", width: "100%" }}
+                style={{ width: "100%" }}
               >
                 <iframe
                   src="https://www.youtube.com/embed/2KlEkQ30beo"
