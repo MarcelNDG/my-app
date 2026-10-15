@@ -84,6 +84,29 @@ export default function Carousel() {
   const goNext = () =>
     setSelected((s) => (s === null ? s : (s + 1) % slides.length));
 
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+
+  const bumpArrow = (el: HTMLButtonElement | null) => {
+    el?.animate(
+      [
+        { transform: "scale(1)" },
+        { transform: "scale(1.5)", offset: 0.1 },
+        { transform: "scale(1)" },
+      ],
+      { duration: 400, easing: "ease-out" }
+    );
+  };
+
+  const pressPrev = () => {
+    bumpArrow(prevRef.current);
+    goPrev();
+  };
+  const pressNext = () => {
+    bumpArrow(nextRef.current);
+    goNext();
+  };
+
   const touchStartX = useRef<number | null>(null);
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -258,7 +281,7 @@ export default function Carousel() {
                 minHeight: 0,
                 boxSizing: "border-box",
                 display: "flex",
-                overflow: "hidden",
+                overflow: "visible",
               }}
             >
               <img
@@ -269,16 +292,18 @@ export default function Carousel() {
                 style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", margin: 0, objectFit: "contain", borderRadius: "0.5rem" }}
               />
               <button
+                ref={prevRef}
                 type="button"
-                onClick={goPrev}
+                onClick={pressPrev}
                 aria-label="Previous slide"
                 className="carousel-modal-prev"
               >
                 ‹
               </button>
               <button
+                ref={nextRef}
                 type="button"
-                onClick={goNext}
+                onClick={pressNext}
                 aria-label="Next slide"
                 className="carousel-modal-next"
               >

@@ -148,7 +148,7 @@ article {
   position: absolute;
   top: 0;
   bottom: 0;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   align-items: center;
   width: 5.5rem;
@@ -159,6 +159,17 @@ article {
   background: transparent;
   border: none;
   color: #9b6750;
+  animation: carousel-arrow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes carousel-arrow-pulse {
+  0%,
+  100% {
+    color: #9b6750;
+  }
+  50% {
+    color: #6d4c41;
+  }
 }
 
 .carousel-modal-prev {
@@ -208,12 +219,12 @@ article {
   }
 
   .carousel-modal-prev {
-    left: 1rem;
+    left: 2.5rem;
     font-size: 9rem;
   }
 
   .carousel-modal-next {
-    right: 1rem;
+    right: 2.5rem;
     font-size: 9rem;
   }
 
