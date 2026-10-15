@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import AudioPlayer from "./audio-player";
 import "./carousel.css";
@@ -79,9 +79,33 @@ export default function Carousel() {
     setIndex((i + slides.length) % slides.length);
   };
 
+  const goPrev = () =>
+    setSelected((s) => (s === null ? s : (s - 1 + slides.length) % slides.length));
+  const goNext = () =>
+    setSelected((s) => (s === null ? s : (s + 1) % slides.length));
+
+  const touchStartX = useRef<number | null>(null);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(deltaX) < 50) return;
+    if (deltaX < 0) goNext();
+    else goPrev();
+  };
+
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setSelected(null);
+      if (e.key === "ArrowLeft")
+        setSelected((s) => (s === null ? s : (s - 1 + slides.length) % slides.length));
+      if (e.key === "ArrowRight")
+        setSelected((s) => (s === null ? s : (s + 1) % slides.length));
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
@@ -176,6 +200,8 @@ export default function Carousel() {
         >
           <div
             onClick={(e) => e.stopPropagation()}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
             className="carousel-modal-panel"
             style={{
               flex: 1,
@@ -242,6 +268,22 @@ export default function Carousel() {
                 height={800}
                 style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", margin: 0, objectFit: "contain", borderRadius: "0.5rem" }}
               />
+              <button
+                type="button"
+                onClick={goPrev}
+                aria-label="Previous slide"
+                className="carousel-modal-prev"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                onClick={goNext}
+                aria-label="Next slide"
+                className="carousel-modal-next"
+              >
+                ›
+              </button>
             </div>
             <div
               className="carousel-modal-text"

@@ -88,6 +88,7 @@ article {
 }
 
 .carousel-modal-image {
+  position: relative;
   flex: 0 0 auto;
   max-height: 33%;
   justify-content: center;
@@ -142,6 +143,41 @@ article {
   margin-top: 0;
 }
 
+.carousel-modal-prev,
+.carousel-modal-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  width: 5.5rem;
+  padding: 0;
+  cursor: pointer;
+  font-size: 4.5rem;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  color: #9b6750;
+}
+
+.carousel-modal-prev {
+  left: 0;
+  justify-content: flex-start;
+}
+
+.carousel-modal-next {
+  right: 0;
+  justify-content: flex-end;
+}
+
+@media (min-width: 640px) {
+  .carousel-modal-prev,
+  .carousel-modal-next {
+    font-size: 6rem;
+  }
+}
+
 .carousel-modal-spacer {
   flex: 1 1 auto;
 }
@@ -165,9 +201,20 @@ article {
   }
 
   .carousel-modal-image {
+    position: static;
     flex: 0 0 40%;
     justify-content: center;
     max-height: none;
+  }
+
+  .carousel-modal-prev {
+    left: 1rem;
+    font-size: 9rem;
+  }
+
+  .carousel-modal-next {
+    right: 1rem;
+    font-size: 9rem;
   }
 
   .carousel-modal-text {
