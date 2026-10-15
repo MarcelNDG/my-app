@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import AudioPlayer from "./audio-player";
-import styles from "./carousel.module.css";
 import "./carousel.css";
 
 const slides = [
@@ -90,7 +89,7 @@ export default function Carousel() {
 
   return (
     <div style={{ marginTop: "2rem" }}>
-      <div className={styles.grid}>
+      <div className="carousel-grid">
         {slides.map((slide, i) => {
           const focused = i === index;
           return (
@@ -102,7 +101,7 @@ export default function Carousel() {
                 setSelected(i);
               }}
               aria-label={`More info about ${slide.title}`}
-              className={focused ? `${styles.slide} ${styles.slideFocused}` : styles.slide}
+              className={focused ? "carousel-slide carousel-slide-focused" : "carousel-slide"}
               style={{
                 cursor: "pointer",
                 padding: 0,
@@ -165,7 +164,7 @@ export default function Carousel() {
           role="dialog"
           aria-modal="true"
           aria-label={`More info about ${slides[selected].title}`}
-          className={styles.modalBackdrop}
+          className="carousel-modal-backdrop"
           style={{
             position: "fixed",
             inset: 0,
@@ -177,7 +176,7 @@ export default function Carousel() {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className={styles.modalPanel}
+            className="carousel-modal-panel"
             style={{
               flex: 1,
               minWidth: 0,
@@ -192,7 +191,7 @@ export default function Carousel() {
               type="button"
               onClick={() => setSelected(null)}
               aria-label="Close"
-              className={styles.modalClose}
+              className="carousel-modal-close"
               style={{
                 cursor: "pointer",
                 display: "flex",
@@ -203,19 +202,19 @@ export default function Carousel() {
                 top: "0.5rem",
                 right: "0.5rem",
                 zIndex: 10,
-                width: "2.5rem",
-                height: "2.5rem",
+                width: "3rem",
+                height: "3rem",
                 boxSizing: "border-box",
-                backgroundColor: "#ffffff",
-                color: "#000000",
-                border: "2px solid #000000",
+                backgroundColor: "#9b6750",
+                color: "#ffffff",
+                border: "none",
                 borderRadius: "50%",
               }}
             >
               <svg
                 viewBox="0 0 24 24"
-                width="22.3"
-                height="22.3"
+                width="26.76"
+                height="26.76"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="3"
@@ -225,9 +224,9 @@ export default function Carousel() {
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
             </button>
-            <div className={styles.modalSpacer} aria-hidden="true" />
+            <div className="carousel-modal-spacer" aria-hidden="true" />
             <div
-              className={styles.modalImage}
+              className="carousel-modal-image"
               style={{
                 minWidth: 0,
                 minHeight: 0,
@@ -245,7 +244,7 @@ export default function Carousel() {
               />
             </div>
             <div
-              className={styles.modalText}
+              className="carousel-modal-text"
               style={{
                 minWidth: 0,
                 minHeight: 0,
@@ -255,15 +254,15 @@ export default function Carousel() {
                 overflow: "hidden",
               }}
             >
-              <h2 style={{ margin: 0, fontSize: "clamp(1.5rem, 5vw, 2.25rem)", fontWeight: 700 }}>{slides[selected].title}</h2>
-              <p style={{ margin: 0, fontSize: "clamp(0.875rem, 2.5vw, 1rem)" }}>
+              <h2 className="modal-title" style={{ margin: 0, fontSize: "clamp(1.5rem, 5vw, 2.25rem)", fontWeight: 900, fontFamily: "var(--font-roboto), system-ui, sans-serif" }}>{slides[selected].title}</h2>
+              <p className="modal-text" style={{ margin: 0, fontSize: "clamp(0.875rem, 2.5vw, 1rem)" }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam.
               </p>
               <AudioPlayer src="/sound/pudu.mp3" label={slides[selected].title} />
               <div
-                className={styles.video}
+                className="carousel-modal-video"
                 style={{ width: "100%" }}
               >
                 <iframe

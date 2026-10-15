@@ -1,3 +1,10 @@
+/*
+ * Breakpoints (named for easier prompting):
+ *   mobile : <640px   (base styles)
+ *   tablet : 640px-1023px  (768px sub-breakpoint: modal width cap)
+ *   desktop: 1024px+
+ */
+
 article h1,
 article p {
   text-align: center !important;
@@ -12,5 +19,192 @@ article {
   article {
     padding-left: 3rem !important;
     padding-right: 3rem !important;
+  }
+}
+
+.carousel-slide {
+  transform: scale(0.85);
+  transform-origin: center;
+  opacity: 0.85;
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+.carousel-slide-focused {
+  transform: scale(1);
+  opacity: 1;
+}
+
+@media (max-width: 639px) {
+  .carousel-slide {
+    transform: scale(0.9);
+  }
+
+  .carousel-slide-focused {
+    transform: scale(1);
+  }
+}
+
+.carousel-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+}
+
+@media (max-width: 639px) {
+  .carousel-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .carousel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.carousel-modal-backdrop {
+  padding: 10%;
+}
+
+@media (max-width: 639px) {
+  .carousel-modal-backdrop {
+    padding: 5%;
+  }
+}
+
+.carousel-modal-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.30rem;
+  padding: 6% 8% 6%;
+}
+
+.carousel-modal-image {
+  flex: 0 0 auto;
+  max-height: 33%;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .carousel-modal-image {
+    justify-content: center;
+  }
+}
+
+.carousel-modal-text {
+  flex: 3 1 auto;
+  padding-top: 2%;
+  justify-content: center;
+  gap: 0.30rem;
+}
+
+.carousel-modal-text h2,
+.carousel-modal-text p {
+  text-align: center !important;
+}
+
+.modal-text {
+  font-family: var(--font-raleway), system-ui, sans-serif;
+}
+
+.carousel-modal-text > .audio-player {
+  margin-top: 1.6rem;
+}
+
+.carousel-modal-video {
+  container-type: size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2 1 auto;
+  min-height: 3rem;
+  width: 100%;
+  max-height: none;
+}
+
+.carousel-modal-video iframe {
+  width: min(100%, calc(100cqh * 16 / 9));
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+}
+
+.carousel-modal-close {
+  margin-top: 0;
+}
+
+.carousel-modal-spacer {
+  flex: 1 1 auto;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .carousel-modal-panel {
+    max-width: 38rem;
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-modal-backdrop {
+    padding: 8%;
+  }
+
+  .carousel-modal-panel {
+    flex-direction: row;
+    gap: 10%;
+    padding: 2rem 8% 2rem;
+  }
+
+  .carousel-modal-image {
+    flex: 0 0 40%;
+    justify-content: center;
+    max-height: none;
+  }
+
+  .carousel-modal-text {
+    flex: 1 1 auto;
+    padding: min(10rem, 15%) min(4rem, 6%);
+    gap: 0.2rem;
+    justify-content: center;
+    max-width: 52rem;
+    margin-inline: auto;
+    background-color: #f0f6f7;
+    border-radius: 8px;
+  }
+
+  .carousel-modal-text > .audio-player {
+    margin-top: 1.6rem;
+  }
+
+  .carousel-modal-spacer {
+    display: none;
+  }
+
+  .carousel-modal-video {
+    flex: 0 0 auto;
+    min-height: 0;
+    container-type: normal;
+    max-height: none;
+    margin-top: 1.6rem;
+  }
+
+  .carousel-modal-video iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+  }
+
+  .carousel-modal-close {
+    margin-top: 0;
   }
 }

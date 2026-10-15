@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import styles from "./audio-player.module.css";
+import "./audio-player.css";
 
 type Props = {
   src: string;
@@ -63,6 +63,7 @@ export default function AudioPlayer({ src, label }: Props) {
 
   return (
     <div
+      className="audio-player modal-audio"
       style={{
         display: "flex",
         alignItems: "center",
@@ -70,9 +71,8 @@ export default function AudioPlayer({ src, label }: Props) {
         width: "100%",
         boxSizing: "border-box",
         padding: "0.5rem",
-        border: "2px solid #3e2723",
+        border: "2px solid #6d4c41",
         borderRadius: "8px",
-        backgroundColor: "#ffffff",
       }}
     >
       <audio ref={audioRef} src={src} preload="none" />
@@ -90,8 +90,8 @@ export default function AudioPlayer({ src, label }: Props) {
           width: "3rem",
           height: "3rem",
           backgroundColor: "#ffffff",
-          color: "#3e2723",
-          border: "2px solid #3e2723",
+          color: "#6d4c41",
+          border: "2px solid #6d4c41",
           borderRadius: "50%",
         }}
       >
@@ -127,7 +127,7 @@ export default function AudioPlayer({ src, label }: Props) {
         value={current}
         onChange={seek}
         aria-label={`Progreso de ${label}`}
-        className={styles.range}
+        className="audio-player-range"
         style={
           {
             "--percent": `${percent}%`,
@@ -141,7 +141,7 @@ export default function AudioPlayer({ src, label }: Props) {
           fontSize: "0.875rem",
           fontVariantNumeric: "tabular-nums",
           fontWeight: 700,
-          color: "#3e2723",
+          color: "#6d4c41",
         }}
       >
         {formatTime(current)} / {formatTime(duration)}

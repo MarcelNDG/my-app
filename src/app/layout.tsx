@@ -1,8 +1,21 @@
 import type { ReactNode } from "react";
+import { Roboto, Raleway } from "next/font/google";
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
 import { Banner, Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import "nextra-theme-docs/style.css";
+
+const roboto = Roboto({
+  weight: "variable",
+  subsets: ["latin"],
+  variable: "--font-roboto",
+});
+
+const raleway = Raleway({
+  weight: "variable",
+  subsets: ["latin"],
+  variable: "--font-raleway",
+});
 
 export const metadata = {
   title: "My Docs",
@@ -25,7 +38,7 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en" dir="ltr" suppressHydrationWarning>
+    <html lang="en" dir="ltr" suppressHydrationWarning className={`${roboto.variable} ${raleway.variable}`}>
       <Head />
       <body>
         <Layout
