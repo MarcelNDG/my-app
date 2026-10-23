@@ -70,13 +70,13 @@ article {
 }
 
 .carousel-modal-backdrop {
-  padding: 2rem;
-  overflow-y: auto;
+  padding: 1rem;
+  overflow: hidden;
 }
 
 @media (max-width: 639px) {
   .carousel-modal-backdrop {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 }
 
@@ -85,22 +85,25 @@ article {
   display: flex;
   flex-direction: column;
   gap: 0.30rem;
-  padding: 1rem 5% 6%;
-  height: 95vh;
+  padding: 8vh 5% 2rem;
+  height: 92vh;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
 @media (max-height: 667px) {
   .carousel-modal-panel {
-    padding: 0.5rem 5% 4%;
-    height: 98vh;
+    padding: 5vh 5% 2rem;
+    height: 92vh;
+    justify-content: flex-start;
   }
 }
 
 .carousel-modal-image {
   position: relative;
   flex: 0 0 auto;
-  height: 200px;
-  max-height: 200px;
+  height: 180px;
+  max-height: 180px;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -108,8 +111,8 @@ article {
 
 @media (max-height: 667px) {
   .carousel-modal-image {
-    height: 120px;
-    max-height: 120px;
+    height: 110px;
+    max-height: 110px;
   }
 }
 
@@ -120,11 +123,11 @@ article {
 }
 
 .carousel-modal-text {
-  flex: 1;
+  flex: 0 1 auto;
   padding-top: 0%;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 0.30rem;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .carousel-modal-text h2,
@@ -152,28 +155,24 @@ article {
   align-items: center;
   flex: 0 0 auto;
   width: 100%;
-  max-height: 20vh;
-  margin-top: 1rem;
+  margin: 1rem auto 0 auto;
 }
 
 @media (max-height: 667px) {
   .carousel-modal-video {
-    max-height: 15vh;
-    margin-top: 0.5rem;
+    margin: 0.5rem auto 0 auto;
   }
 }
 
 .carousel-modal-video iframe {
   width: 100%;
-  height: auto;
   aspect-ratio: 16 / 9;
-  max-width: 100%;
-  max-height: 20vh;
+  height: auto;
 }
 
 @media (max-height: 667px) {
   .carousel-modal-video iframe {
-    max-height: 15vh;
+    height: auto;
   }
 }
 
@@ -254,8 +253,9 @@ article {
     flex-direction: row;
     gap: 10%;
     padding: 2rem 5% 2rem;
-    height: 90vh;
+    height: 92vh;
     max-height: 95vh;
+    justify-content: flex-start;
   }
 
   .carousel-modal-image {
