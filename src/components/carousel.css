@@ -85,14 +85,14 @@ article {
   display: flex;
   flex-direction: column;
   gap: 0.30rem;
-  padding: 1.5rem 5% 6%;
-  height: 85vh;
+  padding: 1rem 5% 6%;
+  height: 95vh;
 }
 
 @media (max-height: 667px) {
   .carousel-modal-panel {
-    padding: 1rem 5% 4%;
-    height: 90vh;
+    padding: 0.5rem 5% 4%;
+    height: 98vh;
   }
 }
 
@@ -108,8 +108,8 @@ article {
 
 @media (max-height: 667px) {
   .carousel-modal-image {
-    height: 150px;
-    max-height: 150px;
+    height: 120px;
+    max-height: 120px;
   }
 }
 
@@ -122,7 +122,7 @@ article {
 .carousel-modal-text {
   flex: 1;
   padding-top: 0%;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.30rem;
   overflow-y: auto;
 }
@@ -152,12 +152,13 @@ article {
   align-items: center;
   flex: 0 0 auto;
   width: 100%;
-  max-height: 25vh;
+  max-height: 20vh;
   margin-top: 1rem;
 }
 
 @media (max-height: 667px) {
   .carousel-modal-video {
+    max-height: 15vh;
     margin-top: 0.5rem;
   }
 }
@@ -167,7 +168,13 @@ article {
   height: auto;
   aspect-ratio: 16 / 9;
   max-width: 100%;
-  max-height: 25vh;
+  max-height: 20vh;
+}
+
+@media (max-height: 667px) {
+  .carousel-modal-video iframe {
+    max-height: 15vh;
+  }
 }
 
 @media (max-width: 380px) {
@@ -247,7 +254,8 @@ article {
     flex-direction: row;
     gap: 10%;
     padding: 2rem 5% 2rem;
-    height: 800px;
+    height: 90vh;
+    max-height: 95vh;
   }
 
   .carousel-modal-image {
@@ -272,7 +280,7 @@ article {
     flex: 1;
     padding: min(2rem, 3%) min(4rem, 6%);
     gap: 0.2rem;
-    justify-content: center;
+    justify-content: flex-start;
     max-width: 52rem;
     margin-inline: auto;
     background-color: #f0f6f7;

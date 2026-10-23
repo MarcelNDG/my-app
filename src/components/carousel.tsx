@@ -224,9 +224,6 @@ export default function Carousel() {
           marginTop: "0.75rem",
         }}
       >
-        <button type="button" onClick={() => goTo(index - 1)} aria-label="Previous slide">
-          Previous
-        </button>
         {slides.map((_, i) => (
           <button
             key={i}
@@ -244,9 +241,6 @@ export default function Carousel() {
             }}
           />
         ))}
-        <button type="button" onClick={() => goTo(index + 1)} aria-label="Next slide">
-          Next
-        </button>
       </div>
 
       {selected !== null && (
@@ -364,7 +358,6 @@ export default function Carousel() {
                 boxSizing: "border-box",
                 display: "flex",
                 flexDirection: "column",
-                overflow: "hidden",
               }}
             >
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0px", marginBottom: "0.25rem" }}>
