@@ -316,7 +316,6 @@ export default function Carousel() {
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
             </button>
-            <div className="carousel-modal-spacer" aria-hidden="true" />
             <div
               className="carousel-modal-image"
               style={{
