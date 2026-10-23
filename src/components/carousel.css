@@ -71,6 +71,7 @@ article {
 
 .carousel-modal-backdrop {
   padding: 10%;
+  overflow-y: auto;
 }
 
 @media (max-width: 639px) {
@@ -84,17 +85,32 @@ article {
   display: flex;
   flex-direction: column;
   gap: 0.30rem;
-  padding: 4rem 5% 6%;
+  padding: 2rem 5% 6%;
+  height: 85vh;
+}
+
+@media (max-height: 667px) {
+  .carousel-modal-panel {
+    padding: 1rem 5% 4%;
+    height: 90vh;
+  }
 }
 
 .carousel-modal-image {
   position: relative;
   flex: 0 0 auto;
-  height: auto;
-  max-height: 25vh;
-  min-height: 150px;
+  height: 200px;
+  max-height: 200px;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+
+@media (max-height: 667px) {
+  .carousel-modal-image {
+    height: 150px;
+    max-height: 150px;
+  }
 }
 
 @media (min-width: 640px) {
@@ -104,10 +120,11 @@ article {
 }
 
 .carousel-modal-text {
-  flex: 3 1 auto;
+  flex: 1;
   padding-top: 0%;
   justify-content: center;
   gap: 0.30rem;
+  overflow-y: auto;
 }
 
 .carousel-modal-text h2,
@@ -123,6 +140,12 @@ article {
   margin-top: 1rem;
 }
 
+@media (max-height: 667px) {
+  .carousel-modal-text > .audio-player {
+    margin-top: 0.5rem;
+  }
+}
+
 .carousel-modal-video {
   display: flex;
   justify-content: center;
@@ -133,11 +156,24 @@ article {
   margin-top: 1rem;
 }
 
+@media (max-height: 667px) {
+  .carousel-modal-video {
+    margin-top: 0.5rem;
+  }
+}
+
 .carousel-modal-video iframe {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
   max-width: 100%;
+}
+
+@media (max-width: 380px) {
+  .carousel-modal-video iframe {
+    width: 90%;
+    margin-inline: auto;
+  }
 }
 
 .carousel-modal-close {
@@ -210,6 +246,7 @@ article {
     flex-direction: row;
     gap: 10%;
     padding: 4rem 5% 2rem;
+    height: 800px;
   }
 
   .carousel-modal-image {
@@ -231,7 +268,7 @@ article {
   }
 
   .carousel-modal-text {
-    flex: 1 1 auto;
+    flex: 1;
     padding: min(2rem, 3%) min(4rem, 6%);
     gap: 0.2rem;
     justify-content: center;
@@ -239,6 +276,7 @@ article {
     margin-inline: auto;
     background-color: #f0f6f7;
     border-radius: 8px;
+    overflow-y: auto;
   }
 
   .carousel-modal-text > .audio-player {

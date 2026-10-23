@@ -262,6 +262,9 @@ export default function Carousel() {
             zIndex: 1000,
             background: "rgba(0,0,0,0.6)",
             display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            overflowY: "auto",
             boxSizing: "border-box",
           }}
         >
