@@ -6,7 +6,7 @@
   flex: 1 1 auto;
   min-width: 0;
   cursor: pointer;
-  height: 1.75rem;
+  height: 1.4rem;
   appearance: none;
   -webkit-appearance: none;
   background: transparent;
@@ -15,7 +15,7 @@
 }
 
 .audio-player-range::-webkit-slider-runnable-track {
-  height: 0.75rem;
+  height: 0.6rem;
   border-radius: 999px;
   background: linear-gradient(
     to right,
@@ -29,9 +29,9 @@
 .audio-player-range::-webkit-slider-thumb {
   appearance: none;
   -webkit-appearance: none;
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-top: -0.375rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: -0.3rem;
   border-radius: 50%;
   background: #ffffff;
   border: 2px solid #6d4c41;
@@ -39,7 +39,7 @@
 }
 
 .audio-player-range::-moz-range-track {
-  height: 0.75rem;
+  height: 0.6rem;
   border-radius: 999px;
   background: linear-gradient(
     to right,
@@ -51,8 +51,8 @@
 }
 
 .audio-player-range::-moz-range-thumb {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 50%;
   background: #ffffff;
   border: 2px solid #6d4c41;
