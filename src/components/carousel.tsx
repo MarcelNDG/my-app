@@ -42,7 +42,7 @@ const slides: {
     description:
       "An orange placeholder image used for the third carousel slide. It represents topic three of this mock gallery.",
     subtitle: "Chinchilla chinchilla",
-    modalText: "La chinchilla tiene el pelaje más denso entre los mamíferos terrestres: hasta 60 pelos por folículo, lo que impide que las pulgas vivan en él. Además, se “baña” en polvo volcánico en vez de agua, porque su pelo mojado tarda mucho en secar y puede enmohecerse.",
+    modalText: "Tiene el pelaje más denso entre los mamíferos terrestres, tanto que las pulgas no logran vivir en él. Se “baña” en polvo volcánico en vez de agua.",
     modalSrc: "/images/chinchilla.png",
     modalVideoId: "9Zlkcs4DZ5Y",
   },
@@ -75,7 +75,7 @@ const slides: {
     description:
       "A yellow placeholder image used for the sixth carousel slide. It represents topic six of this mock gallery.",
     subtitle: "Puma concolor",
-    modalText: "El puma no puede rugir, pero ronronea, silba y chilla, y es un atleta increíble: puede saltar hasta 5 metros de altura y 12 metros de largo. Además, es el mamífero terrestre con mayor distribución de América, ya que habita desde Canadá hasta la Patagonia.",
+    modalText: "No puede rugir, pero ronronea y silba, y salta hasta 5 metros de altura. Es el mamífero terrestre con mayor distribución de América.",
     modalSrc: "/images/puma.png",
     modalVideoId: "4c9KmG95zNI",
   },
