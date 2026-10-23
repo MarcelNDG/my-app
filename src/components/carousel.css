@@ -118,7 +118,7 @@ article {
 }
 
 .carousel-modal-text > .audio-player {
-  margin-top: 1.1rem;
+  margin-top: 1rem;
 }
 
 .carousel-modal-video {
@@ -130,6 +130,7 @@ article {
   min-height: 3rem;
   width: 100%;
   max-height: none;
+  margin-top: 1rem;
 }
 
 .carousel-modal-video iframe {
@@ -240,7 +241,7 @@ article {
   }
 
   .carousel-modal-text > .audio-player {
-    margin-top: 1.2rem;
+    margin-top: 2.5rem;
   }
 
   .carousel-modal-spacer {
@@ -252,7 +253,7 @@ article {
     min-height: 0;
     container-type: normal;
     max-height: none;
-    margin-top: 1.6rem;
+    margin-top: 2.5rem;
   }
 
   .carousel-modal-video iframe {
