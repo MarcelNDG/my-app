@@ -16,8 +16,8 @@ const slides: {
   modalVideoId?: string;
 }[] = [
   {
-    src: "/images/mock-1.svg",
-    alt: "Mock image 1",
+    src: "/images/pudu.png",
+    alt: "Pudu",
     title: "Pudu",
     description:
       "A blue placeholder image used for the first carousel slide. It represents topic one of this mock gallery.",
@@ -25,8 +25,8 @@ const slides: {
     modalText: "El pudú es el ciervo más pequeño del mundo: mide apenas 35 a 45 cm de alto, ¡como un gato grande! Vive en los bosques húmedos del sur de Chile, donde se esconde entre el follaje con sus pasitos sigilosos.",
   },
   {
-    src: "/images/mock-2.svg",
-    alt: "Mock image 2",
+    src: "/images/Monito-del-monte.png",
+    alt: "Monito del Monte",
     title: "Monito del Monte",
     description:
       "A teal placeholder image used for the second carousel slide. It represents topic two of this mock gallery.",
@@ -36,8 +36,8 @@ const slides: {
     modalVideoId: "gVCCMK-mbEg",
   },
   {
-    src: "/images/mock-3.svg",
-    alt: "Mock image 3",
+    src: "/images/chinchilla.png",
+    alt: "Chinchilla",
     title: "Chinchilla",
     description:
       "An orange placeholder image used for the third carousel slide. It represents topic three of this mock gallery.",
@@ -47,8 +47,8 @@ const slides: {
     modalVideoId: "9Zlkcs4DZ5Y",
   },
   {
-    src: "/images/mock-4.svg",
-    alt: "Mock image 4",
+    src: "/images/condor.png",
+    alt: "Cóndor Andino",
     title: "Cóndor Andino",
     description:
       "A violet placeholder image used for the fourth carousel slide. It represents topic four of this mock gallery.",
@@ -58,8 +58,8 @@ const slides: {
     modalVideoId: "AU8XN1TG0SY",
   },
   {
-    src: "/images/mock-5.svg",
-    alt: "Mock image 5",
+    src: "/images/huemul.png",
+    alt: "Huemul",
     title: "Huemul",
     description:
       "A pink placeholder image used for the fifth carousel slide. It represents topic five of this mock gallery.",
@@ -69,8 +69,8 @@ const slides: {
     modalVideoId: "Slnwfb3fqhk",
   },
   {
-    src: "/images/mock-6.svg",
-    alt: "Mock image 6",
+    src: "/images/puma.png",
+    alt: "Puma Concolor",
     title: "Puma Concolor",
     description:
       "A yellow placeholder image used for the sixth carousel slide. It represents topic six of this mock gallery.",
@@ -80,8 +80,8 @@ const slides: {
     modalVideoId: "4c9KmG95zNI",
   },
   {
-    src: "/images/mock-7.svg",
-    alt: "Mock image 7",
+    src: "/images/pinguino-de-humboldt.png",
+    alt: "Pingüino de Humboldt",
     title: "Pingüino de Humboldt",
     description:
       "A sky blue placeholder image used for the seventh carousel slide. It represents topic seven of this mock gallery.",
@@ -91,8 +91,8 @@ const slides: {
     modalVideoId: "HROKya62maY",
   },
   {
-    src: "/images/mock-8.svg",
-    alt: "Mock image 8",
+    src: "/images/ranita-de-darwin.png",
+    alt: "Ranita de Darwin",
     title: "Ranita de Darwin",
     description:
       "A green placeholder image used for the eighth carousel slide. It represents topic eight of this mock gallery.",
@@ -102,8 +102,8 @@ const slides: {
     modalVideoId: "nuyka1zTCIg",
   },
   {
-    src: "/images/mock-9.svg",
-    alt: "Mock image 9",
+    src: "/images/tachuris-rubigastra.png",
+    alt: "Pájaro de 7 Colores",
     title: "Pájaro de 7 Colores",
     description:
       "A red placeholder image used for the ninth carousel slide. It represents topic nine of this mock gallery.",
@@ -194,11 +194,12 @@ export default function Carousel() {
               className={focused ? "carousel-slide carousel-slide-focused" : "carousel-slide"}
               style={{
                 cursor: "pointer",
-                padding: 0,
-                border: "none",
-                background: "none",
+                padding: "1rem",
+                border: "1px solid #eee",
+                background: "white",
                 borderRadius: "0.75rem",
                 overflow: "hidden",
+                boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
               }}
             >
               <Image
