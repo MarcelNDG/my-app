@@ -11,6 +11,7 @@ const slides: {
   title: string;
   description: string;
   modalSrc?: string;
+  modalVideoId?: string;
 }[] = [
   {
     src: "/images/mock-1.svg",
@@ -26,6 +27,7 @@ const slides: {
     description:
       "A teal placeholder image used for the second carousel slide. It represents topic two of this mock gallery.",
     modalSrc: "/images/Monito-del-monte.png",
+    modalVideoId: "gVCCMK-mbEg",
   },
   {
     src: "/images/mock-3.svg",
@@ -34,14 +36,16 @@ const slides: {
     description:
       "An orange placeholder image used for the third carousel slide. It represents topic three of this mock gallery.",
     modalSrc: "/images/chinchilla.png",
+    modalVideoId: "9Zlkcs4DZ5Y",
   },
   {
     src: "/images/mock-4.svg",
     alt: "Mock image 4",
-    title: "Condor",
+    title: "Cóndor Andino",
     description:
       "A violet placeholder image used for the fourth carousel slide. It represents topic four of this mock gallery.",
     modalSrc: "/images/condor.png",
+    modalVideoId: "AU8XN1TG0SY",
   },
   {
     src: "/images/mock-5.svg",
@@ -50,6 +54,7 @@ const slides: {
     description:
       "A pink placeholder image used for the fifth carousel slide. It represents topic five of this mock gallery.",
     modalSrc: "/images/huemul.png",
+    modalVideoId: "Slnwfb3fqhk",
   },
   {
     src: "/images/mock-6.svg",
@@ -58,6 +63,7 @@ const slides: {
     description:
       "A yellow placeholder image used for the sixth carousel slide. It represents topic six of this mock gallery.",
     modalSrc: "/images/puma.png",
+    modalVideoId: "4c9KmG95zNI",
   },
   {
     src: "/images/mock-7.svg",
@@ -66,6 +72,7 @@ const slides: {
     description:
       "A sky blue placeholder image used for the seventh carousel slide. It represents topic seven of this mock gallery.",
     modalSrc: "/images/pinguino-de-humboldt.png",
+    modalVideoId: "HROKya62maY",
   },
   {
     src: "/images/mock-8.svg",
@@ -74,6 +81,7 @@ const slides: {
     description:
       "A green placeholder image used for the eighth carousel slide. It represents topic eight of this mock gallery.",
     modalSrc: "/images/ranita-de-darwin.png",
+    modalVideoId: "nuyka1zTCIg",
   },
   {
     src: "/images/mock-9.svg",
@@ -82,6 +90,7 @@ const slides: {
     description:
       "A red placeholder image used for the ninth carousel slide. It represents topic nine of this mock gallery.",
     modalSrc: "/images/tachuris-rubigastra.png",
+    modalVideoId: "hJVV6hX3JA8",
   },
 ];
 
@@ -347,7 +356,7 @@ export default function Carousel() {
                 style={{ width: "100%" }}
               >
                 <iframe
-                  src="https://www.youtube.com/embed/2KlEkQ30beo"
+                  src={`https://www.youtube.com/embed/${slides[selected].modalVideoId ?? "2KlEkQ30beo"}`}
                   title={`Video of ${slides[selected].title}`}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
