@@ -30,6 +30,8 @@ const slides: {
     title: "Monito del Monte",
     description:
       "A teal placeholder image used for the second carousel slide. It represents topic two of this mock gallery.",
+    subtitle: "Dromiciops gliroides",
+    modalText: "El monito del monte hiberna en invierno y guarda grasa en su cola, que puede duplicar su grosor. Además, es un “fósil viviente”: el único sobreviviente de un linaje de marsupiales de hace más de 40 millones de años.",
     modalSrc: "/images/Monito-del-monte.png",
     modalVideoId: "gVCCMK-mbEg",
   },
@@ -39,6 +41,8 @@ const slides: {
     title: "Chinchilla",
     description:
       "An orange placeholder image used for the third carousel slide. It represents topic three of this mock gallery.",
+    subtitle: "Chinchilla chinchilla",
+    modalText: "La chinchilla tiene el pelaje más denso entre los mamíferos terrestres: hasta 60 pelos por folículo, lo que impide que las pulgas vivan en él. Además, se “baña” en polvo volcánico en vez de agua, porque su pelo mojado tarda mucho en secar y puede enmohecerse.",
     modalSrc: "/images/chinchilla.png",
     modalVideoId: "9Zlkcs4DZ5Y",
   },
@@ -48,6 +52,8 @@ const slides: {
     title: "Cóndor Andino",
     description:
       "A violet placeholder image used for the fourth carousel slide. It represents topic four of this mock gallery.",
+    subtitle: "Vultur gryphus",
+    modalText: "El cóndor andino puede planear horas sin aplaudir sus alas, aprovechando las corrientes de aire. Además, vive más de 70 años y es símbolo nacional de Chile.",
     modalSrc: "/images/condor.png",
     modalVideoId: "AU8XN1TG0SY",
   },
@@ -57,6 +63,8 @@ const slides: {
     title: "Huemul",
     description:
       "A pink placeholder image used for the fifth carousel slide. It represents topic five of this mock gallery.",
+    subtitle: "Hippocamelus bisulcus",
+    modalText: "Aparece en el escudo nacional de Chile, junto al cóndor, y es uno de los ciervos más amenazados del mundo, con apenas unos pocos miles de ejemplares.",
     modalSrc: "/images/huemul.png",
     modalVideoId: "Slnwfb3fqhk",
   },
@@ -66,6 +74,8 @@ const slides: {
     title: "Puma Concolor",
     description:
       "A yellow placeholder image used for the sixth carousel slide. It represents topic six of this mock gallery.",
+    subtitle: "Puma concolor",
+    modalText: "El puma no puede rugir, pero ronronea, silba y chilla, y es un atleta increíble: puede saltar hasta 5 metros de altura y 12 metros de largo. Además, es el mamífero terrestre con mayor distribución de América, ya que habita desde Canadá hasta la Patagonia.",
     modalSrc: "/images/puma.png",
     modalVideoId: "4c9KmG95zNI",
   },
@@ -75,6 +85,8 @@ const slides: {
     title: "Pingüino de Humboldt",
     description:
       "A sky blue placeholder image used for the seventh carousel slide. It represents topic seven of this mock gallery.",
+    subtitle: "Spheniscus humboldti",
+    modalText: "El pingüino de Humboldt es un pingüino de clima templado que anida en cuevas y madrigueras cavadas en el guano, y puede bucear hasta 150 metros persiguiendo anchovetas y sardinas.",
     modalSrc: "/images/pinguino-de-humboldt.png",
     modalVideoId: "HROKya62maY",
   },
@@ -84,6 +96,8 @@ const slides: {
     title: "Ranita de Darwin",
     description:
       "A green placeholder image used for the eighth carousel slide. It represents topic eight of this mock gallery.",
+    subtitle: "Rhinoderma darwinii",
+    modalText: "El macho guarda los huevos en su saco vocal hasta que se convierten en ranitas, y luego las “escupe” por la boca ya formadas.",
     modalSrc: "/images/ranita-de-darwin.png",
     modalVideoId: "nuyka1zTCIg",
   },
@@ -93,6 +107,8 @@ const slides: {
     title: "Pájaro de 7 Colores",
     description:
       "A red placeholder image used for the ninth carousel slide. It represents topic nine of this mock gallery.",
+    subtitle: "Tachuris rubrigastra",
+    modalText: "Pese a pesar apenas unos 10 gramos, luce un plumaje con muchos colores, y construye su nido en forma de copa entre los juncos y totoras de lagunas y pantanos.",
     modalSrc: "/images/tachuris-rubigastra.png",
     modalVideoId: "hJVV6hX3JA8",
   },
