@@ -368,12 +368,12 @@ export default function Carousel() {
               }}
             >
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0px", marginBottom: "0.25rem" }}>
-                <h2 className="modal-title" style={{ margin: 0, fontSize: "clamp(1.5rem, 5vw, 2.25rem)", fontWeight: 900, fontFamily: "var(--font-roboto), system-ui, sans-serif" }}>{slides[selected].title}</h2>
-                <p className="modal-subtitle" style={{ margin: 0, fontStyle: "italic", fontWeight: 700, fontFamily: "var(--font-raleway), system-ui, sans-serif", fontSize: "1rem", color: "#444" }}>
+                <h2 className="modal-title" style={{ margin: 0, fontSize: "clamp(1.2rem, 4vw, 2.25rem)", fontWeight: 900, fontFamily: "var(--font-roboto), system-ui, sans-serif" }}>{slides[selected].title}</h2>
+                <p className="modal-subtitle" style={{ margin: 0, fontStyle: "italic", fontWeight: 700, fontFamily: "var(--font-raleway), system-ui, sans-serif", fontSize: "clamp(0.85rem, 2vw, 1rem)", color: "#444" }}>
                   {slides[selected].subtitle ?? "Lorem Ipsum"}
                 </p>
               </div>
-              <p className="modal-text" style={{ margin: 0, fontSize: "clamp(0.875rem, 2.5vw, 1rem)", fontWeight: 500 }}>
+              <p className="modal-text" style={{ margin: 0, fontSize: "clamp(0.85rem, 2vw, 1rem)", fontWeight: 500 }}>
                 {slides[selected].modalText ?? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."}
               </p>
               <AudioPlayer src="/sound/pudu.mp3" label={slides[selected].title} />
