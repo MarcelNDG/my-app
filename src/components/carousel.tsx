@@ -5,69 +5,83 @@ import Image from "next/image";
 import AudioPlayer from "./audio-player";
 import "./carousel.css";
 
-const slides = [
+const slides: {
+  src: string;
+  alt: string;
+  title: string;
+  description: string;
+  modalSrc?: string;
+}[] = [
   {
     src: "/images/mock-1.svg",
     alt: "Mock image 1",
-    title: "Slide 1",
+    title: "Pudu",
     description:
       "A blue placeholder image used for the first carousel slide. It represents topic one of this mock gallery.",
   },
   {
     src: "/images/mock-2.svg",
     alt: "Mock image 2",
-    title: "Slide 2",
+    title: "Monito del Monte",
     description:
       "A teal placeholder image used for the second carousel slide. It represents topic two of this mock gallery.",
+    modalSrc: "/images/Monito-del-monte.png",
   },
   {
     src: "/images/mock-3.svg",
     alt: "Mock image 3",
-    title: "Slide 3",
+    title: "Chinchilla",
     description:
       "An orange placeholder image used for the third carousel slide. It represents topic three of this mock gallery.",
+    modalSrc: "/images/chinchilla.png",
   },
   {
     src: "/images/mock-4.svg",
     alt: "Mock image 4",
-    title: "Slide 4",
+    title: "Condor",
     description:
       "A violet placeholder image used for the fourth carousel slide. It represents topic four of this mock gallery.",
+    modalSrc: "/images/condor.png",
   },
   {
     src: "/images/mock-5.svg",
     alt: "Mock image 5",
-    title: "Slide 5",
+    title: "Huemul",
     description:
       "A pink placeholder image used for the fifth carousel slide. It represents topic five of this mock gallery.",
+    modalSrc: "/images/huemul.png",
   },
   {
     src: "/images/mock-6.svg",
     alt: "Mock image 6",
-    title: "Slide 6",
+    title: "Puma Concolor",
     description:
       "A yellow placeholder image used for the sixth carousel slide. It represents topic six of this mock gallery.",
+    modalSrc: "/images/puma.png",
   },
   {
     src: "/images/mock-7.svg",
     alt: "Mock image 7",
-    title: "Slide 7",
+    title: "Pingüino de Humboldt",
     description:
       "A sky blue placeholder image used for the seventh carousel slide. It represents topic seven of this mock gallery.",
+    modalSrc: "/images/pinguino-de-humboldt.png",
   },
   {
     src: "/images/mock-8.svg",
     alt: "Mock image 8",
-    title: "Slide 8",
+    title: "Ranita de Darwin",
     description:
       "A green placeholder image used for the eighth carousel slide. It represents topic eight of this mock gallery.",
+    modalSrc: "/images/ranita-de-darwin.png",
   },
   {
     src: "/images/mock-9.svg",
     alt: "Mock image 9",
-    title: "Slide 9",
+    title: "Pájaro de 7 Colores",
     description:
       "A red placeholder image used for the ninth carousel slide. It represents topic nine of this mock gallery.",
+    modalSrc: "/images/tachuris-rubigastra.png",
   },
 ];
 
@@ -285,7 +299,7 @@ export default function Carousel() {
               }}
             >
               <img
-                src="/images/pudushadow.png"
+                src={slides[selected].modalSrc ?? "/images/pudushadow.png"}
                 alt={slides[selected].alt}
                 width={800}
                 height={800}
