@@ -86,18 +86,15 @@ article {
   flex-direction: column;
   gap: 0.30rem;
   padding: 2rem 5% 2rem;
-  max-height: 90vh;
-  height: auto;
+  height: 90vh;
   justify-content: flex-start;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 @media (max-height: 667px) {
   .carousel-modal-panel {
     padding: 1.5rem 5% 2rem;
-    max-height: 90vh;
-    height: auto;
+    height: 90vh;
     justify-content: flex-start;
   }
 }
@@ -129,11 +126,11 @@ article {
 }
 
 .carousel-modal-text {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
   padding-top: 0%;
   justify-content: center;
   gap: 0.30rem;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .carousel-modal-text h2,
@@ -259,8 +256,7 @@ article {
     flex-direction: row;
     gap: 10%;
     padding: 2rem 5% 2rem;
-    max-height: 90vh;
-    height: auto;
+    height: 90vh;
     justify-content: flex-start;
   }
 
