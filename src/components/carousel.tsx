@@ -133,9 +133,9 @@ export default function Carousel() {
   const bumpArrow = (el: HTMLButtonElement | null) => {
     el?.animate(
       [
-        { transform: "scale(1)" },
-        { transform: "scale(1.5)", offset: 0.1 },
-        { transform: "scale(1)" },
+        { transform: "translateY(-50%) scale(1)" },
+        { transform: "translateY(-50%) scale(1.5)", offset: 0.1 },
+        { transform: "translateY(-50%) scale(1)" },
       ],
       { duration: 400, easing: "ease-out" }
     );
@@ -316,13 +316,6 @@ export default function Carousel() {
             </button>
             <div
               className="carousel-modal-image"
-              style={{
-                minWidth: 0,
-                minHeight: 0,
-                boxSizing: "border-box",
-                display: "flex",
-                overflow: "visible",
-              }}
             >
               <img
                 src={slides[selected].modalSrc ?? "/images/pudushadow.png"}
@@ -331,25 +324,25 @@ export default function Carousel() {
                 height={800}
                 style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto", margin: 0, objectFit: "contain", borderRadius: "0.5rem" }}
               />
-              <button
-                ref={prevRef}
-                type="button"
-                onClick={pressPrev}
-                aria-label="Previous slide"
-                className="carousel-modal-prev"
-              >
-                ‹
-              </button>
-              <button
-                ref={nextRef}
-                type="button"
-                onClick={pressNext}
-                aria-label="Next slide"
-                className="carousel-modal-next"
-              >
-                ›
-              </button>
             </div>
+            <button
+              ref={prevRef}
+              type="button"
+              onClick={pressPrev}
+              aria-label="Previous slide"
+              className="carousel-modal-prev"
+            >
+              ‹
+            </button>
+            <button
+              ref={nextRef}
+              type="button"
+              onClick={pressNext}
+              aria-label="Next slide"
+              className="carousel-modal-next"
+            >
+              ›
+            </button>
             <div
               className="carousel-modal-text"
               style={{

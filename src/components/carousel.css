@@ -85,34 +85,37 @@ article {
   display: flex;
   flex-direction: column;
   gap: 0.30rem;
-  padding: 8vh 5% 2rem;
-  height: 85dvh;
+  padding: 5vh 5% 2rem;
+  height: 96vh;
   justify-content: flex-start;
   overflow: hidden;
 }
 
 @media (max-height: 667px) {
   .carousel-modal-panel {
-    padding: 5vh 5% 2rem;
-    height: 85dvh;
-    justify-content: flex-start;
+    padding: 3vh 5% 2rem;
+    height: 96vh;
+    justify-content: center;
   }
 }
 
 .carousel-modal-image {
   position: relative;
+  display: flex;
   flex: 0 0 auto;
-  height: 180px;
-  max-height: 180px;
+  width: 100%;
+  height: 160px;
+  max-height: 160px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
 @media (max-height: 667px) {
   .carousel-modal-image {
-    height: 110px;
-    max-height: 110px;
+    height: 100px;
+    max-height: 100px;
   }
 }
 
@@ -190,8 +193,8 @@ article {
 .carousel-modal-prev,
 .carousel-modal-next {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 130px;
+  transform: translateY(-50%);
   z-index: 20;
   display: flex;
   align-items: center;
@@ -217,12 +220,12 @@ article {
 }
 
 .carousel-modal-prev {
-  left: 0;
+  left: 1rem;
   justify-content: flex-start;
 }
 
 .carousel-modal-next {
-  right: 0;
+  right: 1rem;
   justify-content: flex-end;
 }
 
@@ -253,16 +256,23 @@ article {
     flex-direction: row;
     gap: 10%;
     padding: 2rem 5% 2rem;
-    height: 85dvh;
-    max-height: 90dvh;
+    height: 96vh;
+    max-height: 95vh;
     justify-content: flex-start;
+  }
+
+  .carousel-modal-prev,
+  .carousel-modal-next {
+    top: 50%;
   }
 
   .carousel-modal-image {
     position: relative;
+    display: flex;
     flex: 0 0 40%;
     height: 500px;
     justify-content: center;
+    align-items: center;
     max-height: none;
   }
 
