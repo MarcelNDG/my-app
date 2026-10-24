@@ -86,7 +86,7 @@ article {
   flex-direction: column;
   gap: 0.30rem;
   padding: 8vh 5% 2rem;
-  height: 92vh;
+  height: 85dvh;
   justify-content: flex-start;
   overflow: hidden;
 }
@@ -94,7 +94,7 @@ article {
 @media (max-height: 667px) {
   .carousel-modal-panel {
     padding: 5vh 5% 2rem;
-    height: 92vh;
+    height: 85dvh;
     justify-content: flex-start;
   }
 }
@@ -253,8 +253,8 @@ article {
     flex-direction: row;
     gap: 10%;
     padding: 2rem 5% 2rem;
-    height: 92vh;
-    max-height: 95vh;
+    height: 85dvh;
+    max-height: 90dvh;
     justify-content: flex-start;
   }
 
