@@ -85,17 +85,20 @@ article {
   display: flex;
   flex-direction: column;
   gap: 0.30rem;
-  padding: 5vh 5% 2rem;
-  height: 96vh;
+  padding: 2rem 5% 2rem;
+  max-height: 90vh;
+  height: auto;
   justify-content: flex-start;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 @media (max-height: 667px) {
   .carousel-modal-panel {
-    padding: 3vh 5% 2rem;
-    height: 96vh;
-    justify-content: center;
+    padding: 1.5rem 5% 2rem;
+    max-height: 90vh;
+    height: auto;
+    justify-content: flex-start;
   }
 }
 
@@ -256,8 +259,8 @@ article {
     flex-direction: row;
     gap: 10%;
     padding: 2rem 5% 2rem;
-    height: 96vh;
-    max-height: 95vh;
+    max-height: 90vh;
+    height: auto;
     justify-content: flex-start;
   }
 
