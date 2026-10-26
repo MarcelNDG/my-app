@@ -69,6 +69,12 @@ article {
   }
 }
 
+@media (min-width: 1440px) {
+  .carousel-modal-image > img {
+    max-width: min(100%, 600px) !important;
+  }
+}
+
 .carousel-modal-backdrop {
   padding: 1rem;
   overflow: hidden;
@@ -161,6 +167,66 @@ article {
   }
 }
 
+@media (max-width: 1023px) and (orientation: landscape) {
+  .carousel-modal-backdrop {
+    align-items: flex-start !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    scrollbar-width: none;
+  }
+
+  .carousel-modal-backdrop::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel-modal-panel {
+    height: auto !important;
+    min-height: 90vh !important;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .carousel-modal-text {
+    flex: 0 0 auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .carousel-modal-video-row {
+    display: block;
+    flex: 0 0 auto;
+    height: clamp(8rem, 36vh, 12rem);
+    max-height: none;
+  }
+
+  .carousel-modal-video {
+    display: flex;
+    flex: 0 0 auto;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    container-type: normal !important;
+  }
+
+  .carousel-modal-video iframe {
+    width: min(100%, 64vh, 21.333rem) !important;
+    height: min(36vh, 12rem) !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    aspect-ratio: 16 / 9;
+  }
+
+  .carousel-modal-close {
+    position: fixed !important;
+    top: 0.75rem !important;
+    left: auto !important;
+    right: 0.75rem !important;
+    margin: 0;
+    z-index: 1001 !important;
+  }
+}
+
 .carousel-modal-audio-container > .audio-player {
   margin-top: 1rem;
 }
@@ -206,6 +272,16 @@ article {
   max-width: 100%;
   max-height: 100%;
   aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .carousel-modal-video-row {
+    flex: 0 0 auto;
+  }
+
+  .carousel-modal-video {
+    flex: 0 0 auto;
+  }
 }
 
 .carousel-modal-close {
