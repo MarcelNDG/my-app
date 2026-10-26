@@ -142,36 +142,65 @@ article {
   font-family: var(--font-raleway), system-ui, sans-serif;
 }
 
-.carousel-modal-text > .audio-player {
+@media (max-width: 1023px) {
+  .carousel-modal-info-copy .modal-title {
+    line-height: 0.95;
+  }
+
+  .carousel-modal-info-copy .modal-subtitle {
+    line-height: 1;
+    margin-top: 0.35rem !important;
+  }
+
+  .carousel-modal-info-copy > div:first-child {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+.carousel-modal-audio-container > .audio-player {
   margin-top: 1rem;
 }
 
 @media (max-height: 667px) {
-  .carousel-modal-text > .audio-player {
-    margin-top: 0.5rem;
+  .carousel-modal-audio-container > .audio-player {
+    margin-top: 1rem;
   }
+}
+
+.carousel-modal-info-row,
+.carousel-modal-video-row {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.carousel-modal-info-row {
+  flex: 0 0 auto;
+}
+
+.carousel-modal-video-row {
+  display: flex;
+  flex: 1 1 0;
+  min-height: 0;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .carousel-modal-video {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex: 1 1 0;
   min-height: 0;
   width: 100%;
-  margin: 0.5rem auto 0;
-}
-
-@media (max-height: 667px) {
-  .carousel-modal-video {
-    margin: 0.5rem auto 0 auto;
-  }
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  container-type: size;
 }
 
 .carousel-modal-video iframe {
-  width: auto;
+  width: min(100%, calc(100cqh * 16 / 9));
+  height: auto;
   max-width: 100%;
-  height: 100%;
+  max-height: 100%;
   aspect-ratio: 16 / 9;
 }
 
@@ -223,6 +252,11 @@ article {
   .carousel-modal-next {
     font-size: 6rem;
   }
+
+  .carousel-arrow-glyph {
+    display: inline-block;
+    transform-origin: center;
+  }
 }
 
 .carousel-modal-spacer {
@@ -245,8 +279,8 @@ article {
     display: grid;
     grid-template-columns: minmax(0, 45%) minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr) auto;
-    column-gap: 4%;
-    row-gap: 0.5rem;
+    column-gap: 1%;
+    row-gap: 0.25rem;
     padding: 2rem 2%;
     height: 90vh;
     justify-content: stretch;
@@ -275,17 +309,17 @@ article {
     grid-row: 1;
     align-self: center;
     width: 100%;
-    display: flex;
+    display: grid;
     flex: 0 0 45%;
     height: min(100%, 500px);
     max-height: 100%;
-    justify-content: center;
-    align-items: center;
+    place-items: center;
   }
 
   .carousel-modal-image > img {
     display: block;
-    margin-inline: auto !important;
+    justify-self: center;
+    margin: 0 !important;
   }
 
   .carousel-modal-prev {
@@ -306,39 +340,75 @@ article {
     grid-row: 1;
     height: 100%;
     min-height: 0;
-    padding: min(2rem, 3%) min(4rem, 6%);
-    gap: 0.2rem;
+    padding: min(2rem, 3%) min(2rem, 3%);
+    gap:  0.75rem;
     justify-content: center;
     max-width: 52rem;
     margin-inline: auto;
-    background-color: #f0f6f7;
-    border-radius: 8px;
     overflow-y: auto;
   }
 
-  .carousel-modal-text > .audio-player {
-    margin-top: 0.5rem;
+  .carousel-modal-audio-container > .audio-player {
+    margin-top: 1rem;
   }
 
   .carousel-modal-spacer {
     display: none;
   }
 
+  .carousel-modal-info-row,
+  .carousel-modal-video-row {
+    padding: 0.75rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #f0f6f7;
+  }
+
+  .carousel-modal-info-row {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 1.75rem 0;
+  }
+
+  .carousel-modal-info-copy .modal-title {
+    line-height: 0.95;
+  }
+
+  .carousel-modal-info-copy .modal-subtitle {
+    line-height: 1;
+    margin-top: 0.35rem !important;
+  }
+
+  .carousel-modal-info-copy > div:first-child {
+    margin-bottom: 1.25rem !important;
+  }
+
+  .carousel-modal-info-copy,
+  .carousel-modal-audio-container {
+    box-sizing: border-box;
+    width: 100%;
+    padding-inline: 1rem;
+  }
+
+  .carousel-modal-video-row {
+    display: flex;
+    flex: 1 1 0;
+    min-height: 0;
+    max-height: min(30vh, 16rem);
+    justify-content: center;
+    align-items: stretch;
+    background-color: transparent;
+  }
+
   .carousel-modal-video {
     flex: 1 1 0;
     min-height: 0;
-    width: 100%;
-    max-height: min(30vh, 16rem);
-    container-type: size;
-    margin-top: 0.5rem;
-  }
-
-  .carousel-modal-video iframe {
-    width: min(100%, calc(100cqh * 16 / 9));
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-    aspect-ratio: 16 / 9;
+    max-height: none;
+    margin: 0;
   }
 
   .carousel-modal-close {

@@ -141,12 +141,23 @@ export default function Carousel() {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   const bumpArrow = (el: HTMLButtonElement | null) => {
-    el?.animate(
-      [
-        { transform: "translateY(-50%) scale(1)" },
-        { transform: "translateY(-50%) scale(1.5)", offset: 0.1 },
-        { transform: "translateY(-50%) scale(1)" },
-      ],
+    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+    const target = isDesktop
+      ? el?.querySelector<HTMLElement>(".carousel-arrow-glyph")
+      : el;
+
+    target?.animate(
+      isDesktop
+        ? [
+            { transform: "scale(1)" },
+            { transform: "scale(1.5)", offset: 0.1 },
+            { transform: "scale(1)" },
+          ]
+        : [
+            { transform: "translateY(-50%) scale(1)" },
+            { transform: "translateY(-50%) scale(1.5)", offset: 0.1 },
+            { transform: "translateY(-50%) scale(1)" },
+          ],
       { duration: 400, easing: "ease-out" }
     );
   };
@@ -342,7 +353,7 @@ export default function Carousel() {
               aria-label="Previous slide"
               className="carousel-modal-prev"
             >
-              ‹
+              <span className="carousel-arrow-glyph">‹</span>
             </button>
             <button
               ref={nextRef}
@@ -351,7 +362,7 @@ export default function Carousel() {
               aria-label="Next slide"
               className="carousel-modal-next"
             >
-              ›
+              <span className="carousel-arrow-glyph">›</span>
             </button>
             <div
               className="carousel-modal-text"
@@ -363,28 +374,33 @@ export default function Carousel() {
                 flexDirection: "column",
               }}
             >
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0px", marginBottom: "0.25rem" }}>
-                <h2 className="modal-title" style={{ margin: 0, fontSize: "clamp(1rem, 5vw, 2.25rem)", fontWeight: 900, fontFamily: "var(--font-roboto), system-ui, sans-serif" }}>{slides[selected].title}</h2>
-                <p className="modal-subtitle" style={{ margin: 0, fontStyle: "italic", fontWeight: 700, fontFamily: "var(--font-raleway), system-ui, sans-serif", fontSize: "clamp(0.7rem, 3.5vw, 1rem)", color: "#444" }}>
-                  {slides[selected].subtitle ?? "Lorem Ipsum"}
-                </p>
+              <div className="carousel-modal-info-row">
+                <div className="carousel-modal-info-copy">
+                  <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0px", marginBottom: "0.25rem" }}>
+                    <h2 className="modal-title" style={{ margin: 0, fontSize: "clamp(1rem, 5vw, 2.25rem)", fontWeight: 900, fontFamily: "var(--font-roboto), system-ui, sans-serif" }}>{slides[selected].title}</h2>
+                    <p className="modal-subtitle" style={{ margin: 0, fontStyle: "italic", fontWeight: 700, fontFamily: "var(--font-raleway), system-ui, sans-serif", fontSize: "clamp(0.7rem, 3.5vw, 1rem)", color: "#444" }}>
+                      {slides[selected].subtitle ?? "Lorem Ipsum"}
+                    </p>
+                  </div>
+                  <p className="modal-text" style={{ margin: 0, fontSize: "clamp(0.7rem, 3.5vw, 1rem)", fontWeight: 500 }}>
+                    {slides[selected].modalText ?? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."}
+                  </p>
+                </div>
+                <div className="carousel-modal-audio-container">
+                  <AudioPlayer key={slides[selected].soundSrc} src={slides[selected].soundSrc} label={slides[selected].title} />
+                </div>
               </div>
-              <p className="modal-text" style={{ margin: 0, fontSize: "clamp(0.7rem, 3.5vw, 1rem)", fontWeight: 500 }}>
-                {slides[selected].modalText ?? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."}
-              </p>
-              <AudioPlayer key={slides[selected].soundSrc} src={slides[selected].soundSrc} label={slides[selected].title} />
-              <div
-                className="carousel-modal-video"
-                style={{ width: "100%" }}
-              >
-                <iframe
-                  src={`https://www.youtube.com/embed/${slides[selected].modalVideoId ?? "2KlEkQ30beo"}`}
-                  title={`Video of ${slides[selected].title}`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                  style={{ border: "none", borderRadius: "0.5rem", display: "block" }}
-                />
+              <div className="carousel-modal-video-row">
+                <div className="carousel-modal-video" style={{ width: "100%" }}>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${slides[selected].modalVideoId ?? "2KlEkQ30beo"}`}
+                    title={`Video of ${slides[selected].title}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                    style={{ border: "none", borderRadius: "0.5rem", display: "block" }}
+                  />
+                </div>
               </div>
             </div>
           </div>
