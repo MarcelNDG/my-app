@@ -131,6 +131,20 @@ article {
   }
 }
 
+@media (max-width: 1023px) {
+  .carousel-modal-image {
+    height: clamp(160px, 38vh, 400px);
+    max-height: min(42vh, 400px);
+  }
+}
+
+@media (max-width: 639px) {
+  .carousel-modal-image {
+    height: clamp(100px, 22vh, 280px);
+    max-height: 28vh;
+  }
+}
+
 .carousel-modal-text {
   flex: 1 1 auto;
   padding-top: 0%;
@@ -251,6 +265,7 @@ article {
   display: flex;
   flex: 1 1 0;
   min-height: 0;
+  max-height: min(30vh, 16rem);
   justify-content: center;
   align-items: stretch;
 }
@@ -277,6 +292,7 @@ article {
 @media (max-width: 1023px) and (orientation: landscape) {
   .carousel-modal-video-row {
     flex: 0 0 auto;
+    max-height: none;
   }
 
   .carousel-modal-video {
