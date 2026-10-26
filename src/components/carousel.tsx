@@ -14,11 +14,13 @@ const slides: {
   modalText?: string;
   modalSrc?: string;
   modalVideoId?: string;
+  soundSrc: string;
 }[] = [
   {
     src: "/images/pudu.png",
     alt: "Pudu",
     title: "Pudu",
+    soundSrc: "/sound/pudu.mp3",
     description:
       "A blue placeholder image used for the first carousel slide. It represents topic one of this mock gallery.",
     subtitle: "Pudu puda",
@@ -28,6 +30,7 @@ const slides: {
     src: "/images/Monito-del-monte.png",
     alt: "Monito del Monte",
     title: "Monito del Monte",
+    soundSrc: "/sound/monito-del-monte.mp3",
     description:
       "A teal placeholder image used for the second carousel slide. It represents topic two of this mock gallery.",
     subtitle: "Dromiciops gliroides",
@@ -39,6 +42,7 @@ const slides: {
     src: "/images/chinchilla.png",
     alt: "Chinchilla",
     title: "Chinchilla",
+    soundSrc: "/sound/chinchilla.mp3",
     description:
       "An orange placeholder image used for the third carousel slide. It represents topic three of this mock gallery.",
     subtitle: "Chinchilla chinchilla",
@@ -50,6 +54,7 @@ const slides: {
     src: "/images/condor.png",
     alt: "Cóndor Andino",
     title: "Cóndor Andino",
+    soundSrc: "/sound/condor.mp3",
     description:
       "A violet placeholder image used for the fourth carousel slide. It represents topic four of this mock gallery.",
     subtitle: "Vultur gryphus",
@@ -61,6 +66,7 @@ const slides: {
     src: "/images/huemul.png",
     alt: "Huemul",
     title: "Huemul",
+    soundSrc: "/sound/huemul.mp3",
     description:
       "A pink placeholder image used for the fifth carousel slide. It represents topic five of this mock gallery.",
     subtitle: "Hippocamelus bisulcus",
@@ -72,6 +78,7 @@ const slides: {
     src: "/images/puma.png",
     alt: "Puma Concolor",
     title: "Puma Concolor",
+    soundSrc: "/sound/puma.mp3",
     description:
       "A yellow placeholder image used for the sixth carousel slide. It represents topic six of this mock gallery.",
     subtitle: "Puma concolor",
@@ -83,6 +90,7 @@ const slides: {
     src: "/images/pinguino-de-humboldt.png",
     alt: "Pingüino de Humboldt",
     title: "Pingüino de Humboldt",
+    soundSrc: "/sound/punguino-de-humboldt.mp3",
     description:
       "A sky blue placeholder image used for the seventh carousel slide. It represents topic seven of this mock gallery.",
     subtitle: "Spheniscus humboldti",
@@ -94,6 +102,7 @@ const slides: {
     src: "/images/ranita-de-darwin.png",
     alt: "Ranita de Darwin",
     title: "Ranita de Darwin",
+    soundSrc: "/sound/ranita-de-darwin.mp3",
     description:
       "A green placeholder image used for the eighth carousel slide. It represents topic eight of this mock gallery.",
     subtitle: "Rhinoderma darwinii",
@@ -105,6 +114,7 @@ const slides: {
     src: "/images/tachuris-rubigastra.png",
     alt: "Pájaro de 7 Colores",
     title: "Pájaro de 7 Colores",
+    soundSrc: "/sound/tachuri.mp3",
     description:
       "A red placeholder image used for the ninth carousel slide. It represents topic nine of this mock gallery.",
     subtitle: "Tachuris rubrigastra",
@@ -362,7 +372,7 @@ export default function Carousel() {
               <p className="modal-text" style={{ margin: 0, fontSize: "clamp(0.7rem, 3.5vw, 1rem)", fontWeight: 500 }}>
                 {slides[selected].modalText ?? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."}
               </p>
-              <AudioPlayer src="/sound/pudu.mp3" label={slides[selected].title} />
+              <AudioPlayer key={slides[selected].soundSrc} src={slides[selected].soundSrc} label={slides[selected].title} />
               <div
                 className="carousel-modal-video"
                 style={{ width: "100%" }}
