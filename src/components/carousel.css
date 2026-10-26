@@ -144,7 +144,7 @@ article {
 
 @media (max-width: 1023px) {
   .carousel-modal-panel {
-    gap: 0.75rem;
+    gap: 1.25rem;
   }
 
   .carousel-modal-info-copy .modal-title {
